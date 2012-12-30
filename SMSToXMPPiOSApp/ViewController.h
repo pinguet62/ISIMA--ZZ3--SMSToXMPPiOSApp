@@ -14,6 +14,7 @@
 
 @interface ViewController : UIViewController <UIApplicationDelegate, XMPPRosterDelegate>
 
+- (IBAction)connecterServeurXMPP:(id)sender;
 - (IBAction)envoiXMPP:(id)sender;
 - (IBAction)envoiSMS:(id)sender;
 
@@ -22,11 +23,14 @@
 
 // Méthodes liées au protocole XMPP
 @property XMPPStream * xmppStream;
+@property XMPPReconnect * xmppReconnect;
 - (void)setupStream;
 - (void)goOnline;
 - (void)goOffline;
 - (BOOL)connect;
 - (void)disconnect;
 - (IBAction)sendMessage;
+
+
 
 @end

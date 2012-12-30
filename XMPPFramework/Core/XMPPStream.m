@@ -2118,7 +2118,7 @@ enum XMPPStreamConfig
 	{
 		if ([presence toStr] == nil && myPresence != presence)
 		{
-			myPresence = presence;
+            myPresence = presence;
 		}
 	}
 	
