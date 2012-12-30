@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import <CoreTelephony/CTMessageCenter.h>
+
 
 
 @interface ViewController ()
@@ -77,7 +79,7 @@
 - (IBAction)envoiSMS:(id)sender {
     NSLog(@"envoiSMS");
     
-    // TODO
+    [[CTMessageCenter sharedMessageCenter] sendSMSWithText:@"test" serviceCenter:nil toAddress:@"0647618122"];
 }
 
 
