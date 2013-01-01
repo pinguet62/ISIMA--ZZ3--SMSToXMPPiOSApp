@@ -9,8 +9,8 @@ Application XMPP :
     réception message       ok
 
 Application SMS :
-    événement réception     
-    lecture                 
+    événement réception     ok
+    lecture                 -
     envoi                   ok
 
 

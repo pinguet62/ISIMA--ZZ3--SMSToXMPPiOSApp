@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40B1FBD16927A8800133C0B /* ChatKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40B1FBC16927A8800133C0B /* ChatKit.framework */; };
 		B45F2FCD1690F36900350E6F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B45F2FCC1690F36900350E6F /* README.md */; };
 		B45F326A1690F78A00350E6F /* XMPPAnonymousAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = B45F31581690F78A00350E6F /* XMPPAnonymousAuthentication.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		B45F326B1690F78A00350E6F /* XMPPDeprecatedDigestAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = B45F315B1690F78A00350E6F /* XMPPDeprecatedDigestAuthentication.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -137,6 +138,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B40B1FBC16927A8800133C0B /* ChatKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChatKit.framework; path = System/Library/PrivateFrameworks/ChatKit.framework; sourceTree = SDKROOT; };
 		B45F2FCC1690F36900350E6F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B45F31571690F78A00350E6F /* XMPPAnonymousAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPAnonymousAuthentication.h; sourceTree = "<group>"; };
 		B45F31581690F78A00350E6F /* XMPPAnonymousAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPAnonymousAuthentication.m; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40B1FBD16927A8800133C0B /* ChatKit.framework in Frameworks */,
 				B45F32D61690F8DB00350E6F /* CoreTelephony.framework in Frameworks */,
 				B494CBFE168F62D600EB35F7 /* Security.framework in Frameworks */,
 				B4D82DA3168F597B00975363 /* CoreLocation.framework in Frameworks */,
@@ -1044,6 +1047,7 @@
 		B4F81C58168F41A5001168D0 = {
 			isa = PBXGroup;
 			children = (
+				B40B1FBC16927A8800133C0B /* ChatKit.framework */,
 				B45F2FCC1690F36900350E6F /* README.md */,
 				B4F81C6D168F41A5001168D0 /* SMSToXMPPiOSApp */,
 				B4F81C66168F41A5001168D0 /* Frameworks */,
@@ -1372,6 +1376,10 @@
 				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SMSToXMPPiOSApp/SMSToXMPPiOSApp-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1393,6 +1401,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SMSToXMPPiOSApp/SMSToXMPPiOSApp-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

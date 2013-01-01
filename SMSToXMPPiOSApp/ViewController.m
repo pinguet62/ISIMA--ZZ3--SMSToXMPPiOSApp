@@ -10,6 +10,20 @@
 
 #import <CoreTelephony/CTMessageCenter.h>
 
+// Alertes SMS
+#import <ChatKit/CKSMSService.h>
+#include "dlfcn.h"
+
+id (* CTTelephonyCenterGetDefault)();
+void (* CTTelephonyCenterAddObserver)(id, id, CFNotificationCallback, NSString *, void *, int);
+
+static void telephonyEventCallback(CFNotificationCenterRef center, void * observer, CFStringRef name, const void * object, CFDictionaryRef userInfo) {
+    NSString * notifyname = (NSString *) CFBridgingRelease(name);
+    if ([notifyname isEqualToString:@"kCTMessageReceivedNotification"]) {
+        NSLog(@"SMS reçu !!!");
+    }
+}
+
 
 
 @interface ViewController ()
@@ -36,14 +50,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    void * uikit = dlopen("/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony", RTLD_LAZY);
+    CTTelephonyCenterGetDefault = dlsym(uikit, "CTTelephonyCenterGetDefault");
+    CTTelephonyCenterAddObserver = dlsym(uikit, "CTTelephonyCenterAddObserver");
+    dlclose(uikit);
+    id ct = CTTelephonyCenterGetDefault();
+    CTTelephonyCenterAddObserver(ct, NULL, telephonyEventCallback, NULL, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 }
 
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
