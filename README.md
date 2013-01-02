@@ -17,13 +17,12 @@ Application SMS :
 Configuration du projet
     Framework XMPP : XMPPFramework
         Il a besoin de frameworks standards
-            Project > Target > Build Phases > Link Binary With Libraries > +
-                CFNetwork.framework
-                CoreData.framework
-                Security.framework
-                SystemConfiguration.framework
-                libxml2.dylib
-                libresolv.dylib
+            Project > Target > Build Phases > Link Binary With Libraries > + > CFNetwork.framework
+            Project > Target > Build Phases > Link Binary With Libraries > + > CoreData.framework
+            Project > Target > Build Phases > Link Binary With Libraries > + > Security.framework
+            Project > Target > Build Phases > Link Binary With Libraries > + > SystemConfiguration.framework
+            Project > Target > Build Phases > Link Binary With Libraries > + > libxml2.dylib
+            Project > Target > Build Phases > Link Binary With Libraries > + > libresolv.dylib
         Il est codé en ARC, il faut donc le compiler en mode "ARC"
             Project > Target > Build Phases > Compile Sources
             Pour tous les fichiers du framework, ajouter l'option "-fobjc-arc" (sans parenthèse)
@@ -39,5 +38,6 @@ Configuration du projet
         Inclus dans le SDK de xCode :
             Project > Target > Build Phases > Compile Sources > CoreTelephony.framework
         Certains fichiers manquent dans le framework, il suffit de les ajouter au répertoire "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers/".
-
+    Lecture des SMS :
+        Project > Target > Build Phases > Link Binary With Libraries > + > libsqlite3.dylib
             

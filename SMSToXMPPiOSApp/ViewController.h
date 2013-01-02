@@ -17,6 +17,9 @@
 - (IBAction)connecterServeurXMPP:(id)sender;
 - (IBAction)envoiXMPP:(id)sender;
 - (IBAction)envoiSMS:(id)sender;
+- (IBAction)lireSMS:(id)sender;
+- (IBAction)onButtonClick:(id)sender;
+@property (retain, nonatomic) IBOutlet UILabel *message;
 
 @property NSString * identifiant;
 @property NSString * motdepasse;

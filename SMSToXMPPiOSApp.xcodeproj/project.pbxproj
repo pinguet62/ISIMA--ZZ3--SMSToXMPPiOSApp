@@ -118,6 +118,7 @@
 		B45F32D41690F78A00350E6F /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B45F32671690F78A00350E6F /* libidn.a */; };
 		B45F32D61690F8DB00350E6F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45F32D51690F8DB00350E6F /* CoreTelephony.framework */; };
 		B494CBFE168F62D600EB35F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B494CBFD168F62D600EB35F7 /* Security.framework */; };
+		B4BE159A1693860A00A23565 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BE15991693860A00A23565 /* libsqlite3.dylib */; };
 		B4D82D99168F595500975363 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D82D98168F595500975363 /* libxml2.dylib */; };
 		B4D82D9B168F595C00975363 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D82D9A168F595C00975363 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B4D82D9D168F596600975363 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D82D9C168F596600975363 /* libresolv.dylib */; };
@@ -365,6 +366,7 @@
 		B45F32691690F78A00350E6F /* XMPPFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
 		B45F32D51690F8DB00350E6F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B494CBFD168F62D600EB35F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B4BE15991693860A00A23565 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B4D82D98168F595500975363 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B4D82D9A168F595C00975363 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B4D82D9C168F596600975363 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
@@ -378,7 +380,6 @@
 		B4F81C6F168F41A5001168D0 /* SMSToXMPPiOSApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SMSToXMPPiOSApp-Info.plist"; sourceTree = "<group>"; };
 		B4F81C71168F41A5001168D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B4F81C73168F41A5001168D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B4F81C75168F41A5001168D0 /* SMSToXMPPiOSApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMSToXMPPiOSApp-Prefix.pch"; sourceTree = "<group>"; };
 		B4F81C76168F41A5001168D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4F81C77168F41A5001168D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B4F81C79168F41A5001168D0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -394,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4BE159A1693860A00A23565 /* libsqlite3.dylib in Frameworks */,
 				B40B1FBD16927A8800133C0B /* ChatKit.framework in Frameworks */,
 				B45F32D61690F8DB00350E6F /* CoreTelephony.framework in Frameworks */,
 				B494CBFE168F62D600EB35F7 /* Security.framework in Frameworks */,
@@ -1047,7 +1049,6 @@
 		B4F81C58168F41A5001168D0 = {
 			isa = PBXGroup;
 			children = (
-				B40B1FBC16927A8800133C0B /* ChatKit.framework */,
 				B45F2FCC1690F36900350E6F /* README.md */,
 				B4F81C6D168F41A5001168D0 /* SMSToXMPPiOSApp */,
 				B4F81C66168F41A5001168D0 /* Frameworks */,
@@ -1066,18 +1067,20 @@
 		B4F81C66168F41A5001168D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B45F32D51690F8DB00350E6F /* CoreTelephony.framework */,
-				B45F31541690F78A00350E6F /* XMPPFramework */,
-				B494CBFD168F62D600EB35F7 /* Security.framework */,
-				B4D82DA2168F597B00975363 /* CoreLocation.framework */,
-				B4D82DA0168F597500975363 /* SystemConfiguration.framework */,
-				B4D82D9E168F596E00975363 /* CoreData.framework */,
-				B4D82D9C168F596600975363 /* libresolv.dylib */,
-				B4D82D98168F595500975363 /* libxml2.dylib */,
 				B4D82D9A168F595C00975363 /* CFNetwork.framework */,
-				B4F81C67168F41A5001168D0 /* UIKit.framework */,
-				B4F81C69168F41A5001168D0 /* Foundation.framework */,
+				B40B1FBC16927A8800133C0B /* ChatKit.framework */,
+				B4D82D9E168F596E00975363 /* CoreData.framework */,
 				B4F81C6B168F41A5001168D0 /* CoreGraphics.framework */,
+				B4D82DA2168F597B00975363 /* CoreLocation.framework */,
+				B45F32D51690F8DB00350E6F /* CoreTelephony.framework */,
+				B4F81C69168F41A5001168D0 /* Foundation.framework */,
+				B4D82D9C168F596600975363 /* libresolv.dylib */,
+				B4BE15991693860A00A23565 /* libsqlite3.dylib */,
+				B4D82D98168F595500975363 /* libxml2.dylib */,
+				B494CBFD168F62D600EB35F7 /* Security.framework */,
+				B4D82DA0168F597500975363 /* SystemConfiguration.framework */,
+				B4F81C67168F41A5001168D0 /* UIKit.framework */,
+				B45F31541690F78A00350E6F /* XMPPFramework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1101,7 +1104,6 @@
 				B4F81C6F168F41A5001168D0 /* SMSToXMPPiOSApp-Info.plist */,
 				B4F81C70168F41A5001168D0 /* InfoPlist.strings */,
 				B4F81C73168F41A5001168D0 /* main.m */,
-				B4F81C75168F41A5001168D0 /* SMSToXMPPiOSApp-Prefix.pch */,
 				B4F81C79168F41A5001168D0 /* Default.png */,
 				B4F81C7B168F41A5001168D0 /* Default@2x.png */,
 				B4F81C7D168F41A5001168D0 /* Default-568h@2x.png */,
